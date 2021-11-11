@@ -16,6 +16,9 @@
 ![](https://github.com/spatie/laravel-permission/workflows/Run%20Tests/badge.svg?branch=master)
 [![Total Downloads](https://img.shields.io/packagist/dt/spatie/laravel-permission.svg?style=flat-square)](https://packagist.org/packages/spatie/laravel-permission)
 
+## 说明
+在 laravel-permission 的基础上，针对中文环境进行修改，增加权限绑定路由和中文权限名，角色名。
+
 ## Documentation, Installation, and Usage Instructions
 
 See the [DOCUMENTATION](https://docs.spatie.be/laravel-permission/) for detailed installation and usage instructions.
