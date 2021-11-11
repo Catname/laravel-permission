@@ -1,8 +1,7 @@
 {
-    "name": "spatie/laravel-permission",
+    "name": "catname/laravel-permission",
     "description": "Permission handling for Laravel 6.0 and up",
     "keywords": [
-        "spatie",
         "laravel",
         "permission",
         "permissions",
@@ -19,6 +18,10 @@
             "email": "freek@spatie.be",
             "homepage": "https://spatie.be",
             "role": "Developer"
+        },
+        {
+            "name": "ZhangHQ",
+            "email": "tomcath@foxmail.com"
         }
     ],
     "require": {
