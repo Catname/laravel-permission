@@ -135,6 +135,19 @@ class Role extends Model implements RoleContract
         return $role;
     }
 
+    public static function findOrCreate2(array $attributes = []): RoleContract
+    {
+        $attributes['guard_name'] = $attributes['guard_name'] ?? Guard::getDefaultName(static::class);
+
+        $role = static::findByParam(['name' => $attributes['name'], 'guard_name' => $attributes['guard_name']]);
+
+        if (! $role) {
+            return static::query()->create($attributes + (PermissionRegistrar::$teams ? [PermissionRegistrar::$teamsKey => app(PermissionRegistrar::class)->getPermissionsTeamId()] : []));
+        }
+
+        return $role;
+    }
+
     protected static function findByParam(array $params = [])
     {
         $query = static::when(PermissionRegistrar::$teams, function ($q) use ($params) {

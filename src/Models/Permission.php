@@ -136,6 +136,26 @@ class Permission extends Model implements PermissionContract
     }
 
     /**
+     * 通过权限名找到或创建权限 （有多个额外字段）
+     * @param array $attributes
+     * @return PermissionContract
+     * @author: ZhangHQ
+     * @email : tomcath@foxmail.com
+     */
+    public static function findOrCreate2(array $attributes = []):PermissionContract
+    {
+        $attributes['guard_name'] = $attributes['guard_name'] ?? Guard::getDefaultName(static::class);
+
+        $permission = static::getPermission(['name' => $attributes['name'], 'guard_name' => $attributes['guard_name']]);
+
+        if (! $permission) {
+            return static::query()->create($attributes);
+        }
+
+        return $permission;
+    }
+
+    /**
      * Get the current cached permissions.
      *
      * @param array $params
