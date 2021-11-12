@@ -1,8 +1,8 @@
 <?php
 
-namespace Spatie\Permission\Traits;
+namespace Catname\Permission\Traits;
 
-use Spatie\Permission\PermissionRegistrar;
+use Catname\Permission\PermissionRegistrar;
 
 trait RefreshesPermissionCache
 {
