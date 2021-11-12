@@ -1,17 +1,17 @@
 <?php
 
-namespace Spatie\Permission\Models;
+namespace Catname\Permission\Models;
 
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
-use Spatie\Permission\Contracts\Permission as PermissionContract;
-use Spatie\Permission\Exceptions\PermissionAlreadyExists;
-use Spatie\Permission\Exceptions\PermissionDoesNotExist;
-use Spatie\Permission\Guard;
-use Spatie\Permission\PermissionRegistrar;
-use Spatie\Permission\Traits\HasRoles;
-use Spatie\Permission\Traits\RefreshesPermissionCache;
+use Catname\Permission\Contracts\Permission as PermissionContract;
+use Catname\Permission\Exceptions\PermissionAlreadyExists;
+use Catname\Permission\Exceptions\PermissionDoesNotExist;
+use Catname\Permission\Guard;
+use Catname\Permission\PermissionRegistrar;
+use Catname\Permission\Traits\HasRoles;
+use Catname\Permission\Traits\RefreshesPermissionCache;
 
 class Permission extends Model implements PermissionContract
 {
@@ -78,9 +78,9 @@ class Permission extends Model implements PermissionContract
      * @param string $name
      * @param string|null $guardName
      *
-     * @throws \Spatie\Permission\Exceptions\PermissionDoesNotExist
+     * @throws \Catname\Permission\Exceptions\PermissionDoesNotExist
      *
-     * @return \Spatie\Permission\Contracts\Permission
+     * @return \Catname\Permission\Contracts\Permission
      */
     public static function findByName(string $name, $guardName = null): PermissionContract
     {
@@ -99,9 +99,9 @@ class Permission extends Model implements PermissionContract
      * @param int $id
      * @param string|null $guardName
      *
-     * @throws \Spatie\Permission\Exceptions\PermissionDoesNotExist
+     * @throws \Catname\Permission\Exceptions\PermissionDoesNotExist
      *
-     * @return \Spatie\Permission\Contracts\Permission
+     * @return \Catname\Permission\Contracts\Permission
      */
     public static function findById(int $id, $guardName = null): PermissionContract
     {
@@ -121,7 +121,7 @@ class Permission extends Model implements PermissionContract
      * @param string $name
      * @param string|null $guardName
      *
-     * @return \Spatie\Permission\Contracts\Permission
+     * @return \Catname\Permission\Contracts\Permission
      */
     public static function findOrCreate(string $name, $guardName = null): PermissionContract
     {
@@ -175,7 +175,7 @@ class Permission extends Model implements PermissionContract
      *
      * @param array $params
      *
-     * @return \Spatie\Permission\Contracts\Permission
+     * @return \Catname\Permission\Contracts\Permission
      */
     protected static function getPermission(array $params = []): ?PermissionContract
     {

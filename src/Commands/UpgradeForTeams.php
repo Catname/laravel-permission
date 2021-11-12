@@ -1,6 +1,6 @@
 <?php
 
-namespace Spatie\Permission\Commands;
+namespace Catname\Permission\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Config;
