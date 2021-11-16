@@ -2,6 +2,7 @@
 
 namespace Catname\Permission\Models;
 
+use DateTimeInterface;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Catname\Permission\Contracts\Role as RoleContract;
@@ -153,6 +154,17 @@ class Role extends Model implements RoleContract
         }
 
         return $role;
+    }
+
+    /**
+     *重写数组 / JSON 序列化日期格式。
+     * @author ZhangHQ
+     * @param  \DateTimeInterface  $date
+     * @return string
+     */
+    protected function serializeDate(DateTimeInterface $date)
+    {
+        return $date->format($this->dateFormat ?: 'Y-m-d H:i:s');
     }
 
     protected static function findByParam(array $params = [])
