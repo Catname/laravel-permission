@@ -17,7 +17,7 @@
 [![Total Downloads](https://img.shields.io/packagist/dt/spatie/laravel-permission.svg?style=flat-square)](https://packagist.org/packages/spatie/laravel-permission)
 
 ## 说明
-在 laravel-permission 的基础上，针对中文环境进行修改，增加权限绑定路由和中文权限名，角色名。
+在 laravel-permission 的基础上，针对中文环境进行修改，增加权限绑定路由，权限绑定 HTTP请求 和中文权限名，角色名。
 
 ## Documentation, Installation, and Usage Instructions
 

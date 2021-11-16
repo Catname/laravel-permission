@@ -135,6 +135,13 @@ class Role extends Model implements RoleContract
         return $role;
     }
 
+    /**
+     * 通过角色名查找角色，如果角色不存在则创建（有多个额外字段）
+     * @param array $attributes
+     * @return RoleContract
+     * @author: ZhangHQ
+     * @email : tomcath@foxmail.com
+     */
     public static function findOrCreate2(array $attributes = []): RoleContract
     {
         $attributes['guard_name'] = $attributes['guard_name'] ?? Guard::getDefaultName(static::class);
