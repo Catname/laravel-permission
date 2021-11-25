@@ -291,6 +291,7 @@ trait HasPermissions
     {
         return $this->loadMissing('roles', 'roles.permissions')
             ->roles->flatMap(function ($role) {
+                // 隐藏不必要的字段
                 return $role->permissions->makeHidden(['guard_name', 'created_at', 'updated_at']);
             })->sort()->values();
     }
